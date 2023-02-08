@@ -2,7 +2,7 @@
 
 Aluno: Matheus Barbosa Furtado
 SENAC - RESILIA - PROJETO INDIVIDUAL 1 DO MÓDULO 2:
-
+6
 Uma startup está desenvolvendo um aplicativo que verifica a compatibilidade
 de um candidato com uma vaga de acordo com seu resultado nas etapas do
 processo seletivo.
@@ -39,14 +39,13 @@ def cadastro_cand():
         px = float(input()) #Variavel que recebe a nota do teste prático, que será digitada pelo usuário a partir do (input)
         print('Digite a nota da avalição de soft skills') #Print com mensagem solicitando a nota da avaliação de soft skills.
         sx = float(input()) #Variavel que recebe a nota da avaliação de soft skills, a partir do (input)
-        cand = [candidato,  ex, tx, px,sx] #Lista dentro do while, que são armazenados todos os dados solicitados acima, um de cada vez. Ou seja, a cada passagem do looping!
+        cand = [candidato, ex ,tx, px, sx ] #Lista dentro do while, que são armazenados todos os dados solicitados acima, um de cada vez. Ou seja, a cada passagem do looping!
 
+        print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' + str(cand[4]))
         candidatos.append(cand) #função de lista (append), pra adicionar todos os valores, que caem na lista (cand) com as informações dos candidatos e coloca esses valores, ao final da lista fora do while (candidatos).
         sair = input('Digite sim para continuar e não para sair: ') #variavel sair para ser modificada dentro do looping. Perguntando com (input), se o usuário deseja sair caso digite (sim), o loopíng é executado mais uma vez.
 
 print('*'*50) #print apenas para organizar o código na hora da execução.
-
-
 
 def avaliacao():
 
@@ -70,8 +69,8 @@ def avaliacao():
                 #Print, que organiza uma mensagem dizendo o(s), candidatos com as respectivas notas solicitadas pelo avaliador.
 
 
-cadastro_cand()
-avaliacao()
+cadastro_cand() #Primeira função, contendo o objetivo de cadastrar os candidatos.
+avaliacao() #Segunda função que tem como objetivo, de dizer as notas mínimas do avaliador, e fazer a busca dentro da lista de usuários cadastrados.
 
 
 
