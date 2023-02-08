@@ -19,12 +19,11 @@ formato) e depois uma função que busca o candidato de
 acordo com os critérios digitados pelo usuário.
 '''
 
-
-sair = 'sim' #Variavel sair, que será utilizada no comando de looping onde terá a função de criar um (stop), no looping sendo solicitado pelo usuário.
+sair ='sim' #Variavel sair, que será utilizada no comando de looping onde terá a função de criar um (stop), no looping sendo solicitado pelo usuário.
 
 candidatos = [] #Lista vazia, onde seráo adicionados os nomes dos candidatos, e suas respectivas notas nos testes.
 
-def cadastro_cand():
+def cadastro_cand(): #funçao que cadastra os candidatos.
 
     sair = 'sim'  # Variavel sair, que será utilizada no comando de looping onde terá a função de criar um (stop), no looping sendo solicitado pelo usuário.
 
@@ -41,13 +40,14 @@ def cadastro_cand():
         sx = float(input()) #Variavel que recebe a nota da avaliação de soft skills, a partir do (input)
         cand = [candidato, ex ,tx, px, sx ] #Lista dentro do while, que são armazenados todos os dados solicitados acima, um de cada vez. Ou seja, a cada passagem do looping!
 
-        print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' + str(cand[4]))
+        print(str(cand[0].title()),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' + str(cand[4]))
         candidatos.append(cand) #função de lista (append), pra adicionar todos os valores, que caem na lista (cand) com as informações dos candidatos e coloca esses valores, ao final da lista fora do while (candidatos).
-        sair = input('Digite sim para continuar e não para sair: ') #variavel sair para ser modificada dentro do looping. Perguntando com (input), se o usuário deseja sair caso digite (sim), o loopíng é executado mais uma vez.
+        a = input('Digite (sim) para cadastrar mais um candidato e (não) para passar à fase de busca:  ') #(input) perguntando se o usuário deseja sair caso digite (sim), o loopíng é executado mais uma vez.
+        sair = (a.lower()) #variavel sair para ser modificada dentro do looping.
 
 print('*'*50) #print apenas para organizar o código na hora da execução.
 
-def avaliacao():
+def avaliacao(): #Funçao que carrega o procedimento de busca.
 
     print('*'*50) #print apenas para organizar o código na hora da execução.
     print('Digite a nota mínima da entrevista desejada para o candidato: ') #Print com mensagem solicitando a nota miníma desejada pelo avaliador, na entrevista.
@@ -62,16 +62,18 @@ def avaliacao():
     print('*'*50) #print apenas para organizar o código na hora da execução.
 
     for x in candidatos: #estrutura de repetição for, que busca os valores dentro da lista (candidatos) de um em um.
-            # condicional (if), que faz testes para saber qual candidato tem notas equivalentes com as que o avaliador sugeriu como mínimas nos testes.
-            if (float(x[1]) >= nota_minima[0]) and (float(x[2]) >= nota_minima[1]) and (float(x[3]) >= nota_minima[2]) and (float(x[4]) >= nota_minima[3]):
-                print('*' * 50) #print apenas para organizar o código na hora da execução.
-                print('o candidato que corresponde as especificações de notas desejadas é:', '\nnome: ',x[0].title(),'\nnotas: ', 'e' + str(x[1]) + '_' + 't' + str(x[2]) + '_' + 'p' + str(x[3]) + '_' + 's' + str(x[4]))
-                #Print, que organiza uma mensagem dizendo o(s), candidatos com as respectivas notas solicitadas pelo avaliador.
+                 # condicional (if), que faz testes para saber qual candidato tem notas equivalentes com as que o avaliador sugeriu como mínimas nos testes.
+                if (float(x[1]) >= nota_minima[0]) and (float(x[2]) >= nota_minima[1]) and (float(x[3]) >= nota_minima[2]) and (float(x[4]) >= nota_minima[3]):
+                    print('*' * 50) #print apenas para organizar o código na hora da execução.
+                    print('Candidato que corresponde as especificações de notas desejadas é:')
+                    print('\nnome: ', x[0].title(), '\nnotas: ', 'e' + str(x[1]) + '_' + 't' + str(x[2]) + '_' + 'p' + str(x[3]) + '_' + 's' + str(x[4]))
+                    #Prints, que organizam uma mensagem dizendo o(s), candidatos com as respectivas notas solicitadas pelo avaliador.
+
+    print('*' * 50)
 
 
 cadastro_cand() #Primeira função, contendo o objetivo de cadastrar os candidatos.
 avaliacao() #Segunda função que tem como objetivo, de dizer as notas mínimas do avaliador, e fazer a busca dentro da lista de usuários cadastrados.
-
 
 
 
