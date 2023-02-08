@@ -36,9 +36,17 @@ De início eu separei em defs as duas operações principais, contendo dentro da
           print('Digite a nota da avalição de soft skills')
           sx = float(input())
           cand = [candidato,  ex, tx, px,sx] 
-
+          
+          print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' + str(cand[4]))
           candidatos.append(cand) 
           sair = input('Digite sim para continuar e não para sair: ')
           
 >>Explicando o funciomaneto dessa estrutura: 
-> 
+>>Começa com uma váriavel (sair), ja estipulada com a string (sim), para que comece o looping(while).
+Em seguida começa o looping(while), dentro dele há 5 váriaveis referentes ao:
+(nome do candidato, nota da entrevista, nota do teste teórico, nota do teste prático e nota da entrevista).
+Após isso, todos esses dados que são digitados pelo usuário ficam salvos na lista (cand).
+depois um print, para esse candidato, com suas respectivas notas no formato solicitado pelo projeto. (ex_tx_px_sx)
+seguindo por uma adição a lista principal com (append), e por fim a variavel (sair), para verificar se o usuario quer continuar
+cadastrando candidatos, ou se quer passar para a segunda etapa do projeto, a de busca.
+
