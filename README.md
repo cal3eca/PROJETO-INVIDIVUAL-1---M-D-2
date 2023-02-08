@@ -37,7 +37,7 @@ De início eu separei em defs as duas operações principais, contendo dentro da
           sx = float(input())
           cand = [candidato,  ex, tx, px,sx] 
           
-          print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' + str(cand[4]))
+          print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' +   str(cand[4]))
           candidatos.append(cand) 
           sair = input('Digite sim para continuar e não para sair: ')
           
@@ -50,3 +50,39 @@ depois um print, para esse candidato, com suas respectivas notas no formato soli
 seguindo por uma adição a lista principal com (append), e por fim a variavel (sair), para verificar se o usuario quer continuar
 cadastrando candidatos, ou se quer passar para a segunda etapa do projeto, a de busca.
 
+
+
+>> Na segunda parte do projeto: Criei um menu de buscas para o avaliador.
+Utilizando uma funçao def, para guardar todo esse processo que começa a partir de (prints)
+solicitando ao avaliador, quais são as notas mínimas em cada etapa do processo seletivo.
+salvando todas essas notas em váriaveis diferentes, e colocando em seguida tudo dentro de uma lista.
+chamada (nota-minima)
+
+      def avaliacao():
+
+            print('*'*50) 
+            print('Digite a nota mínima da entrevista desejada para o candidato: ')
+            e1 = float(input()) 
+            print('Digite a nota mínima do teste teórico desejada para o candidato: ')
+            t1 = float(input()) 
+            print('Digite a nota mínima no teste prático desejada para o candidato: ')
+            p1 = float(input())
+            print('Digite a nota mínima da avaliação de soft skills desejada para o candidato: ')
+            s1 = float(input())
+            nota_minima = [e1, t1, p1, s1]
+            print('*'*50) 
+
+
+>>Depois desse processo, utilizando o laço de repetição for, essa etapa busca dentro da lista de candidatos, cada valor dentro dela.
+Em seguida, utilizando condicionais (if), são feitos testes, que comparam as notas dentro da lista (candidatos), com as notas dentro da lista (nota_minima), caso as notas dentro da primeira lista de candidatos, sejam maiores ou iguais, as solicitadas como mínimas pelo avaliador, o candidato é visto como "aprovado", e é exibido através de um (print) o nome dos candidato(s), aprovados no processo com suas notas.
+
+
+          for x in candidatos:
+                if (float(x[1]) >= nota_minima[0]) and (float(x[2]) >= nota_minima[1]) and (float(x[3]) >= nota_minima[2]) and (float(x[4]) >= nota_minima[3]):
+                    print('*' * 50)
+                    print('o candidato que corresponde as especificações de notas desejadas é:', '\nnome: ',x[0].title(),'\nnotas: ', 'e' + str(x[1]) + '_' + 't' +         str(x[2]) + '_' + 'p' + str(x[3]) + '_' + 's' + str(x[4]))
+
+>>Para finalizar, como todo esse processos estão dentro de funções def, eu chamo essas funções para que o programa funcione!
+
+      cadastro_cand()
+      avaliacao()
