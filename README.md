@@ -20,26 +20,26 @@ processo seletivo.
 >>O funcionamento do código, se dá no sentido de que: O usuário vai cadastrar os possíveis candidatos, a partir de um conjunto de perguntas feitas a esse usuário, digitando o (nome) do candidato e suas (notas) referente as avaliações. 
 De início eu separei em defs as duas operações principais, contendo dentro da def as funções que dão funcionalidade ao código.
 
-  def cadastro_cand():
+    def cadastro_cand():
 
-      sair = 'sim' 
+          sair = 'sim' 
 
-      while (sair == 'sim'):
-          print('Digite o nome do candidato: ')
-          candidato = input() 
-          print('Digite a nota da entrevista: ') 
-          ex = float(input()) 
-          print('Digite a nota do teste teórico: ') 
-          tx = float(input()) 
-          print('Digite a nota do teste prático: ') 
-          px = float(input())
-          print('Digite a nota da avalição de soft skills')
-          sx = float(input())
-          cand = [candidato,  ex, tx, px,sx] 
-          
-          print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' +   str(cand[4]))
-          candidatos.append(cand) 
-          sair = input('Digite sim para continuar e não para sair: ')
+          while (sair == 'sim'):
+              print('Digite o nome do candidato: ')
+              candidato = input() 
+              print('Digite a nota da entrevista: ') 
+              ex = float(input()) 
+              print('Digite a nota do teste teórico: ') 
+              tx = float(input()) 
+              print('Digite a nota do teste prático: ') 
+              px = float(input())
+              print('Digite a nota da avalição de soft skills')
+              sx = float(input())
+              cand = [candidato,  ex, tx, px,sx] 
+
+              print(str(cand[0]),'e' +str(cand[1])+ '_' + 't' + str(cand[2]) + '_' + 'p' + str(cand[3]) + '_' + 's' +   str(cand[4]))
+              candidatos.append(cand) 
+              sair = input('Digite sim para continuar e não para sair: ')
           
 >>Explicando o funciomaneto dessa estrutura: 
 >>Começa com uma váriavel (sair), ja estipulada com a string (sim), para que comece o looping(while).
