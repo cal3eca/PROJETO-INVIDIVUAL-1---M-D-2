@@ -80,7 +80,7 @@ Em seguida, utilizando condicionais (if), são feitos testes, que comparam as no
           for x in candidatos:
                 if (float(x[1]) >= nota_minima[0]) and (float(x[2]) >= nota_minima[1]) and (float(x[3]) >= nota_minima[2]) and (float(x[4]) >= nota_minima[3]):
                     print('*' * 50)
-                    print('o candidato que corresponde as especificações de notas desejadas é:', '\nnome: ',x[0].title(),'\nnotas: ', 'e' + str(x[1]) + '_' + 't' +         str(x[2]) + '_' + 'p' + str(x[3]) + '_' + 's' + str(x[4]))
+                    print('o candidato que corresponde as especificações de notas desejadas é:', '\nnome: ',x[0].title(),'\nnotas: ', 'e' + str(x[1]) + '_' + 't' +  str(x[2]) + '_' + 'p' + str(x[3]) + '_' + 's' + str(x[4]))
 
 >>Para finalizar, como todo esse processos estão dentro de funções def, eu chamo essas funções para que o programa funcione!
 
